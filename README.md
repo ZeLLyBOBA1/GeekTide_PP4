@@ -15,7 +15,7 @@ DevTide is an innovative web platform designed to be your comprehensive hub for 
 - ### Project: Managment & Goals
   - [Project Goals](#project-goals)
   - [Audience](#audience)
-  - [Agile Method](#agile-method)
+  - [Agile Methodology](#agile-methodology)
   - [User Stories](#user-stories)
 
 - ### Design & Features
@@ -58,6 +58,9 @@ The purpose of GeekTide is to offer dynamic platform for its users, owners, and 
   - **Content Management:** Oversee all the content, ensuring that it is properly categorized, up-to-date, and accessible to users.
   - **User Support:** Provide timely support to users, addressing any technical issues, answering questions, and ensuring a smooth experience on the platform.
 
+[Go upwards ⇧](#content)
+
+
 ## Audience
 
 GeekTide is for anyone passionate about technology, whether you're a professional or just starting out. Our platform is designed for:
@@ -66,10 +69,40 @@ GeekTide is for anyone passionate about technology, whether you're a professiona
 - **IT Enthusiasts:** Stay updated on tech trends, share your knowledge, and connect with like-minded people in the community.
 - **Students & Learners:** Access a wealth of information to support your studies, learn new skills, and explore the world of technology.
 
+[Go upwards ⇧](#content)
 
-## Agile Method
+## Agile Methodology
 
-## User Stories
+### MoSCoW prioritization
+
+In development process, I followed Agile principles to ensure flexibility and continuous improvement. I used the MoSCoW method to prioritize features and tasks. This method helped me to focus on what’s most important.
+
+| Priority Level   | Description                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| **Must Have**    | Essential features that are critical for the platform's core functionality and success.                |
+| **Should Have**  | Important features that add significant value but can be delayed if necessary without major impact.    |
+| **Could Have**   | Nice-to-have features that enhance the user experience but are not essential for the initial launch.    |
+| **Won't Have**   | Features that are either not needed for this phase or have been deprioritized for future consideration. |
+
+<hr>
+
+### GitHub Projects
+
+I used GitHub Projects to organize and track my development progress. This helped me to manage tasks, prioritize work, and stay on schedule. My project board is divided into columns, such as "To Do", "In Progress", "Done", and "Won`t have" allowing me to visualize the workflow and ensure that nothing is left behind.
+
+<details>
+
+![screenshot](documentation/test_image.jpg)
+
+<summary>GitHub Projects Image</summary>
+
+</details>
+
+<hr>
+
+### User Stories
+
+[Go upwards ⇧](#content)
 
 ## Wireframes
 
