@@ -92,7 +92,7 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 <details>
 
-![screenshot](documentation/test_image.jpg)
+![screenshot](documentation/github_projects.png)
 
 <summary>GitHub Projects Image</summary>
 
@@ -102,32 +102,32 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 ### User Stories
 
-|Epic <br> Id | Epic name                  | User <br> Story <br> Id | User Story name               | Label   |
-|-------------|----------------------------|---------------|-----------------------------------------|---------|
-| #2          | User Authentication        | #3            | Account Creation                        |         |
-| #2          | User Authentication        | #4            | Log in                                  |         |
-| #2          | User Authentication        | #5            | Password Reset                          |
-| #2          | User Authentication        | #6            | Log out                                 |
-| #7          | Profile Management         | #8            | Profile Picture                         |
-| #7          | Profile Management         | #9            | Profile Username                        |
-| #7          | Profile Management         | #10           | Profile Personal Details                |
-| #7          | Profile Management         | #11           | Profile Delete                          |
-| #7          | Profile Management         | #12           | Profile Password Change                 |
-| #13         | Content Discovery          | #14           | Content Scroll Lane                     |   
-| #13         | Content Discovery          | #15           | Content Search Bar                      |
-| #13         | Content Discovery          | #16           | Content Sorting                         |
-| #13         | Content Discovery          | #17           | Content Bookmark                        |
-| #13         | Content Discovery          | #18           | Adaptive Navigation Sidebar             |
-| #13         | Content Discovery          | #19           | Logo Leading to Home Page               |
-| #20         | Community Engagement       | #21           | Posting Content                         | 
-| #20         | Community Engagement       | #22           | Comments                                |
-| #20         | Community Engagement       | #23           | Post/Comment Score System               |
-| #20         | Community Engagement       | #24           | Report System                           |
-| #20         | Community Engagement       | #25           | Private Messages                        |
-| #20         | Community Engagement       | #26           | Groups/Communities                      |
-| #27         | Admin Tools                | #28           | Reported Content                        |
-| #27         | Admin Tools                | #29           | Comment/Post Deleting                   |
-| #27         | Admin Tools                | #30           | User Support Chat                       |
+|Epic <br> Id | Epic name                  | User <br> Story <br> Id | User Story name               |
+|-------------|----------------------------|-------------------------|-----------------------------------------|
+| #2          | User Authentication        | #3                      | Account Creation                        |         
+| #2          | User Authentication        | #4                      | Login                                   |         
+| #2          | User Authentication        | #5                      | Password Reset                          |
+| #2          | User Authentication        | #6                      | Log out                                 |
+| #7          | Profile Management         | #8                      | Profile Picture                         |
+| #7          | Profile Management         | #9                      | Profile Username                        |
+| #7          | Profile Management         | #10                     | Profile Personal Details                |
+| #7          | Profile Management         | #11                     | Profile Delete                          |
+| #7          | Profile Management         | #12                     | Profile Password Change                 |
+| #13         | Content Discovery          | #14                     | Content Scroll Lane                     |   
+| #13         | Content Discovery          | #15                     | Content Search Bar                      |
+| #13         | Content Discovery          | #16                     | Content Sorting                         |
+| #13         | Content Discovery          | #17                     |  Bookmark                               |
+| #13         | Content Discovery          | #18                     | Adaptive Navigation Sidebar             |
+| #13         | Content Discovery          | #19                     | Logo Leading to Home Page               |
+| #20         | Community Engagement       | #21                     | Posting Content                         | 
+| #20         | Community Engagement       | #22                     | Comments                                |
+| #20         | Community Engagement       | #23                     | Post/Comment Score System               |
+| #20         | Community Engagement       | #24                     | Report System                           |
+| #20         | Community Engagement       | #25                     | Private Messages                        |
+| #20         | Community Engagement       | #26                     | Groups/Communities                      |
+| #27         | Admin Tools                | #28                     | Reported Content                        |
+| #27         | Admin Tools                | #29                     | Comment/Post Deleting                   |
+| #27         | Admin Tools                | #30                     | User Support Chat                       |
 
 [Go upwards ⇧](#content)
 
