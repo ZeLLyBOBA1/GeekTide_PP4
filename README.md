@@ -2,7 +2,7 @@
 
 ## Introduction
 
-![screenshot](documentation/test_image.jpg)
+![screenshot](static/test_image.jpg)
 
 ### [GeekTide Live]()
 
