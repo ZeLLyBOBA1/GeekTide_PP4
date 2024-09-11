@@ -1,1 +1,9 @@
-.post{background-color: aliceblue}
+header div{
+    background-color: black;
+    width: 100px;
+    height: 50px;
+}
+
+header div h1{
+    color: aliceblue;
+}
