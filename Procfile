@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn GeekTide_Django.wsgi
