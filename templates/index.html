@@ -1,7 +1,44 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<div>Welcome to my website</div>
+<h1>Список постов</h1>
+
+    <div class="post-list">
+        {% for post in posts %}
+            <div class="post-item">
+                <h2>{{ post.title }}</h2>
+                
+                <!-- Картинка поста -->
+                {% if post.image %}
+                    {% if "placeholder" in post.image.url %}
+                    <img src="{% static 'images/test_image.jpg' %}" alt="placeholder image">
+                    {% else %}
+                    <img src=" {{ post.image.url }}" alt="{{ post.title }}">
+                    {% endif %}
+                {% endif %}
+                
+                <!-- Описание поста -->
+                <p> {{ post.description|safe }} </p>
+
+                <!-- Теги поста -->
+                <p>Теги:
+                    {% for tag in post.get_tags_list %}
+                        <span>{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+
+                <!-- Информация о владельце поста -->
+                <p>Автор: {{ post.owner.profile.nickname }}</p>
+                <img src="{{ post.owner.profile.avatar.url }}" alt="Аватар автора" width="50" height="50">
+
+                <!-- Дата публикации поста -->
+                <small>Опубликовано: {{ post.created_at }}</small>
+            </div>
+            <hr>
+        {% empty %}
+            <p>Постов пока нет.</p>
+        {% endfor %}
+    </div>
 
 {% endblock %}
