@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль {{ profile.nickname }}</title>
+</head>
+<body>
+    <h1>Профиль пользователя: {{ profile.nickname }}</h1>
+    <p>Имя: {{ profile.first_name }}</p>
+    <p>Фамилия: {{ profile.last_name }}</p>
+    <p>О себе: {{ profile.bio }}</p>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" alt="Аватар {{ profile.nickname }}">
+    {% else %}
+        <p>Аватар не загружен</p>
+    {% endif %}
+</body>
+</html>
