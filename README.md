@@ -165,6 +165,56 @@ These fonts were chosen to maintain clarity, readability, and a cohesive design 
 
 ## Deployment
 
+### Pre Deployment
+
+The hidden variables are as follows
+
+- SECRET_KEY
+- DATABASE_URL
+- CLOUDINARY_URL
+- PORT
+
+### Deploying on Heroku
+
+1. Create a Heroku account.
+2. Sign up with a student account for credits. (optional)
+3. Once logged in, select create a new app.
+4. Select an app name and region.
+5. Select deployment method as connect to github.
+6. Find the desired repo.
+7. Enable automatic deploys and select the main branch
+8. In the settings tab select reveal config vars. Input the required hidden variables.
+9. Select nodejs and python as the buildpack.
+10. Deploy.
+
+### Fork The Repository
+
+1. Go to the GitHub repository
+2. Click on Fork button in the upper right-hand corner
+3. Edit the repository name and description if desired
+4. Click the green create fork button
+
+### Clone The Repository
+
+1. Go to the GitHub repository
+2. Locate the green Code button above the list of files and click it
+3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone.
+
+### Run The Repository Locally
+
+1. Go to the GitHub repository
+2. Locate the green Code button above the list of files and click it
+3. From the dropdown menu select download Zip.
+4. Download and open the zip file to run in an editor
+5. Create an env.py file and input the environment variables
+6. Ensure [PostgreSQL](https://www.postgresql.org/) is install on your computer and ports are open
+7. Create a virtual environment for installing the python modules in the pip file.
+8. Run python3 makemigrations, migrate and runserver
+
 ## Credits
 
 ## Acknowledgments
