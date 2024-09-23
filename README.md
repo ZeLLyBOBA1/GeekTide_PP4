@@ -92,7 +92,7 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 <details>
 
-![screenshot](documentation/github_projects.png)
+![screenshot](documentation/readme/github_projects.png)
 
 <summary>GitHub Projects Image</summary>
 
@@ -153,6 +153,13 @@ All images used in this application have been sourced from [Pinterest](https://i
 
 The application uses a combination of the following fonts to create a clean and modern look:
 
+- **Open Sans:** This sans-serif font is the primary typeface used throughout the site for its readability and contemporary feel. It is employed for most of the body text and user interface elements.
+
+- **Arial:** As a widely available and versatile sans-serif font, Arial is used as a fallback for text elements when Open Sans is not available.
+
+- **Sans-serif:** A general sans-serif font family is used as a fallback to ensure text remains legible and consistent across different devices and browsers.
+
+These fonts were chosen to maintain clarity, readability, and a cohesive design aesthetic across the application.
 
 ## Testing
 
