@@ -145,9 +145,13 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 These colors were chosen to create a clean and professional look while maintaining good readability and accessibility across different devices and screen sizes.
 
+[Go upwards ⇧](#content)
+
 ## Images
 
 All images used in this application have been sourced from [Pinterest](https://ie.pinterest.com/) They have been selected to complement the overall design and aesthetic of the project, providing visual context and enhancing the user experience.
+
+[Go upwards ⇧](#content)
 
 ## Typography
 
@@ -161,20 +165,19 @@ The application uses a combination of the following fonts to create a clean and 
 
 These fonts were chosen to maintain clarity, readability, and a cohesive design aesthetic across the application.
 
+[Go upwards ⇧](#content)
+
 ## Testing
+
+Testing documentation can be found [here.](./TESTING.md)
+
+[Go upwards ⇧](#content)
 
 ## Deployment
 
-### Pre Deployment
+<details>
 
-The hidden variables are as follows
-
-- SECRET_KEY
-- DATABASE_URL
-- CLOUDINARY_URL
-- PORT
-
-### Deploying on Heroku
+**<summary>Deploying on Heroku</summary>**
 
 1. Create a Heroku account.
 2. Sign up with a student account for credits. (optional)
@@ -187,14 +190,22 @@ The hidden variables are as follows
 9. Select nodejs and python as the buildpack.
 10. Deploy.
 
-### Fork The Repository
+</details>
+
+<details>
+
+**<summary>Fork The Repository</summary>**
 
 1. Go to the GitHub repository
 2. Click on Fork button in the upper right-hand corner
 3. Edit the repository name and description if desired
 4. Click the green create fork button
 
-### Clone The Repository
+</details>
+
+<details>
+
+**<summary>Clone The Repository</summary>**
 
 1. Go to the GitHub repository
 2. Locate the green Code button above the list of files and click it
@@ -204,7 +215,11 @@ The hidden variables are as follows
 6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
 7. Press Enter to create your local clone.
 
-### Run The Repository Locally
+</details>
+
+<details>
+
+**<summary>Run The Repository Locally</summary>**
 
 1. Go to the GitHub repository
 2. Locate the green Code button above the list of files and click it
@@ -214,6 +229,11 @@ The hidden variables are as follows
 6. Ensure [PostgreSQL](https://www.postgresql.org/) is install on your computer and ports are open
 7. Create a virtual environment for installing the python modules in the pip file.
 8. Run python3 makemigrations, migrate and runserver
+
+</details>
+<br>
+
+[Go upwards ⇧](#content)
 
 ## Credits
 
