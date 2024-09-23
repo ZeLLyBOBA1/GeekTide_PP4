@@ -1,105 +1,74 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Посты</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
 
-</head>
-<body>
-    
-    <main id="main-content">
+<section id="index-container" style="overflow-y: auto; height: 100%;"> 
+    <div id="posts-container" style="width: 80%; height: 100%;">
+        
+    </div>
 
-        <div id="posts-container-div">
+    <div id="loader" style="display: none;">Loading Posts</div>
+</section>
 
-            <div id="posts-container">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let page = 1;  
+    let loading = false;  
 
-                {% for post in posts %}
-                    <div class="post">
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.description|striptags }}</p>
-                        {% if post.image %}
-                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                        {% endif %}
-                        <p>Автор: <a href="{% url 'profile' post.owner.profile.nickname %}">{{ post.owner.username }}</a></p>
-                        <p>Дата публикации: {{ post.created_at }}</p>
-                        <p>Теги:
-                            {% for tag in post.get_tags_list %}
-                                {{ tag }}{% if not forloop.last %}, {% endif %}
-                            {% endfor %}
-                        </p>
-                    </div>
-                {% endfor %}
-            </div>
-    
-            <div id="loader" style="display: none;">
-                <div id="logo-pic" style="background-color: black; height: 32px; width: 32px; display: flex; border-radius: 10px 10px 10px 10px; overflow: hidden;">
-                    <div style="width: 100%; height: 100%; background-color: rgb(0, 0, 0);"></div>
-                    <div style="width: 100%; height: 100%; background-color: rgb(60, 60, 60);"></div>
-                    <div style="width: 100%; height: 100%; background-color: rgb(120, 120, 120);"></div>
-                </div>
-            </div>
-    
-            <script>
-                let page = 2;  
-                let loading = false;
-    
-                function loadMorePosts() {
-                    if (!loading) {
-                        loading = true;
-                        $('#loader').show();
-    
-                        $.get("{% url 'load_posts' %}?page=" + page, function(data) {
-                            if (data.posts.length > 0) {
-                                data.posts.forEach(function(post) {
-                                    let postHtml = '<div class="post">';
-                                    postHtml += '<h2>' + post.title + '</h2>';
-                                    postHtml += '<p>' + post.description + '</p>';
-                                    if (post.image_url) {
-                                        postHtml += '<img src="' + post.image_url + '" alt="' + post.title + '">';
-                                    }
-                                    postHtml += '<p>Автор: ' + post.owner + '</p>';
-                                    postHtml += '<p>Дата публикации: ' + post.created_at + '</p>';
-                                    postHtml += '<p>Теги: ' + post.tags.join(", ") + '</p>';
-                                    postHtml += '</div>';
-    
-                                    $('#posts-container').append(postHtml);
-                                });
-    
-                                page += 1;
-                                loading = false;
-                                $('#loader').hide();
-    
-                                if (!data.has_next) {
-                                    $('#main-content').off('scroll');  
-                                }
+    function loadMorePosts() {
+        if (!loading) {
+            loading = true;
+            $('#loader').show();
+
+            $.ajax({
+                url: "{% url 'load_posts' %}",  
+                method: 'GET',
+                data: { page: page },
+                success: function(data) {
+                    if (data.posts.length > 0) {
+                        data.posts.forEach(function(post) {
+                            let postHtml = '<div class="post">';
+                            postHtml += '<div class="post-header">';
+                            postHtml += '<a class="avatar"><img src="' + (post.owner_avatar_url || '{% static "images/default-avatar.png" %}') + '" alt="' + post.owner_display_name + '" class="post-owner-avatar"></a>';
+                            postHtml += '<span class="post-owner-name"><a>' + post.owner_display_name + '</a></span>';
+                            postHtml += '</div>';
+                            postHtml += '<h2>' + post.title + '</h2>';
+                            if (post.image_url) {
+                                postHtml += '<img src="' + post.image_url + '" alt="' + post.title + '">';
                             }
+                            postHtml += '<p>' + post.description + '</p>';
+                            postHtml += '</div>';
+
+                            $('#posts-container').append(postHtml);
                         });
+
+                        page += 1;  
+                        loading = false; 
+                        $('#loader').hide();  
+
+                        if (!data.has_next) {
+                            $('#main-content').off('scroll');  
+                        }
                     }
                 }
+            });
+        }
+    }
+
     
-                // Событие скролла на элементе main
-                $('#main-content').scroll(function() {
-                    const main = $('#main-content');  // Элемент main
-                    const scrollPosition = main.scrollTop() + main.height();  // Текущая позиция прокрутки
-                    const contentHeight = main[0].scrollHeight;  // Полная высота контента внутри main
+    $(document).ready(function() {
+    loadMorePosts();  
+
     
-                    // Проверка, достиг ли пользователь низа main
-                    if (scrollPosition >= contentHeight - 100 && !loading) {
-                        loadMorePosts();
-                    }
-                });
-            </script>
-        </div>
-    </main>
-    
-</body>
-</html>
+    $('#index-container').on('scroll', function() {
+        
+        if ($('#index-container').scrollTop() + $('#index-container').height() >= $('#posts-container').height()) {
+            loadMorePosts();  
+        }
+    });
+});
+</script>
+
 {% endblock content %}
 
 

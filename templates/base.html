@@ -1,12 +1,7 @@
 {% load static %}
 
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <title>GeekTide</title>
@@ -16,64 +11,73 @@
 
 </head>
 
-<body style="display: flex; overflow: hidden;">
-
-    <aside>
+<body>
     
+    <input type="checkbox" id="sidebar-checkbox" style="display: none;">
+
+    <label for="sidebar-checkbox">
+        <a class="overlay"></a>
+    </label>
+
+    
+    <aside id="sidebar" style="width: 60%;">
+    
+        <div class="navbar-button" id="create_button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/>
+            </svg>
+            <p id="create_p">Create Post</p>
+        </div>
+        <span style="position: absolute; bottom: 5px;">GeekTide © 2024. All rights reserved.</span>
+        
     </aside>
 
-   
-    <section id="main-section">
-
+    
+    <section id="main-section" style="width: 100%;">
         <header>
+            
+            <div id="header-left-side">
+                <label for="sidebar-checkbox" id="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                    </svg>
+                </label>
+            </div>
 
+            
             <div class="logo">
-
                 <div id="logo-pic">
-
-                    <div id="search-icon">
-                        <svg style="position: static;" xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#FFFFFF"><path d="M796-121 533-384q-30 26-69.96 40.5Q423.08-329 378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></svg>
-                    </div>
                     <div style="width: 100%; height: 100%; background-color: #000000;"></div>
                     <div style="width: 100%; height: 100%; background-color: #3c3c3c;"></div>
                     <div style="width: 100%; height: 100%; background-color: #787878;"></div>
-
                 </div>
-
                 <a href="{% url 'index' %}" id="logo-name">GeekTide</a>
-       
             </div>
 
-            <div id="header-aside">
-
+            
+            <div id="header-right-side">
                 {% if user.is_authenticated %}
-
-                    <div id="create_button">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                        <p id="create_p">Create</p>
-                    </div>
-                    
-                    <a id="profile-icon" href="{% url 'profile' user.profile.nickname %}">
-                        <svg  xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
-                    </a>
-
+                    {% if user.profile.avatar %}
+                        <a class="avatar" href="{% url 'profile' user.profile.display_name %}">
+                            <img src="{{ user.profile.avatar.url }}" alt="User Avatar">
+                        </a>
+                    {% else %}
+                        <a id="profile-icon" href="{% url 'profile' user.profile.display_name %}">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
+                                <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/>
+                            </svg>
+                        </a>
+                    {% endif %}
                 {% else %}
-
-                    <a class="login-button">Login</a>
-
+                    <a class="login-button" href="{% url 'login' %}">Login</a>
                 {% endif %}
-    
             </div>
-
         </header>
 
         {% block content %}
-        
         {% endblock content %}
-
     </section>
 
 </body>
-
 </html>
 
