@@ -36,10 +36,10 @@ DevTide is an innovative web platform designed to be your comprehensive hub for 
 
 - ### Credits & Acknowledgements
   - [Credits](#credits)
-    - [Languages used](#)
+    - [Languages used](#languages-used)
     - [Software](#)
     - [Education](#)
-  - [Acknowledgements](#acknowledgements)
+  - [Acknowledgements](#acknowledgments)
 
 ## Project Goals
 
@@ -97,6 +97,10 @@ I used GitHub Projects to organize and track my development progress. This helpe
 <summary>GitHub Projects Image</summary>
 
 </details>
+
+<br>
+
+[Go upwards ⇧](#content)
 
 <hr>
 
@@ -237,4 +241,42 @@ Testing documentation can be found [here.](./TESTING.md)
 
 ## Credits
 
+### Languages used
+
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Python**
+- **Django**
+
+### Software
+
+For this project, I utilized a variety of software tools and services, including:
+
+- [**Visual Studio Code:**](https://code.visualstudio.com/) My primary code editor, which offers powerful features and extensions for efficient development.
+- [**Balsamiq:**](https://balsamiq.com/) A wireframing tool that helped in designing and planning the layout of the application.
+- [**GitHub:**](https://github.com/) Used for version control and collaboration, enabling me to track changes and manage the project effectively.
+- [**Google Icons:**](https://fonts.google.com/icons) For integrating visually appealing icons that enhance the user interface.
+- [**W3C HTML Validator:**](https://validator.w3.org/) A tool for checking the HTML code for errors and ensuring standards compliance.
+- [**W3C CSS Validator:**](https://jigsaw.w3.org/css-validator/) Used to validate the CSS code for best practices and standards adherence.
+- [**Heroku:**](https://dashboard.heroku.com/apps) A cloud platform for deploying the application, providing easy scalability and management.
+- [**PostgreSQL:**](https://www.postgresql.org/) A powerful relational database used to store and manage application data.
+
+### Education 
+
+To develop this project, I utilized various resources, including:
+
+- [**YouTube:**](https://www.youtube.com/) For tutorials and walkthroughs on Django and front-end development.
+- [**ChatGPT:**](https://chatgpt.com/) For answering questions and website content.
+- [**Google:**](https://www.google.com/) For searching documentation, guides, and troubleshooting tips.
+- [**Django Documentation:**](https://docs.djangoproject.com/en/5.1/) The official Django documentation provided in-depth insights and best practices.
+- [**MDN Web Docs:**](https://developer.mozilla.org/en-US/) For web development resources and best practices in HTML, CSS, and JavaScript.
+- [**W3Schools:**](https://www.w3schools.com/) For quick references and tutorials on web technologies.
+- [**CSS-Tricks:**](https://css-tricks.com/) For tips and tricks related to CSS and front-end design.
+- [**GitHub:**](https://github.com/) For exploring open-source projects and finding inspiration for my own code.
+
 ## Acknowledgments
+
+- I would like to thanks my facilitator Marko, for daily stand ups, and for helping me to resolve my code issues 
+
+[Go upwards ⇧](#content)
