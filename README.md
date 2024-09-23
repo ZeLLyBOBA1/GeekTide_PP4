@@ -19,13 +19,13 @@ DevTide is an innovative web platform designed to be your comprehensive hub for 
   - [User Stories](#user-stories)
 
 - ### Design & Features
-  - [Wireframes](#wireframes)
+  <!-- - [Wireframes](#wireframes)
   - [Features](#features)
     - [](#)
     - [](#)
     - [](#)
     - [](#)
-  - [Database Schema](#database-schema)
+  - [Database Schema](#database-schema) -->
   - [Colour Schema](#colour-schema)
   - [Images](#images)
   - [Typography](#typography)
@@ -131,17 +131,28 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 [Go upwards ⇧](#content)
 
-## Wireframes
+<!-- ## Wireframes
 
 ## Features
 
-## Database Schema
+## Database Schema -->
 
 ## Colour Schema
 
+[Coolors](https://coolors.co) was used to create colour palette. The design of the application follows a modern and minimalistic color scheme, using a combination of dark and light shades to create a visually appealing and user-friendly interface. The primary colors used throughout the application are:
+
+![screenshot](documentation/readme/geektide-color-schema.png)
+
+These colors were chosen to create a clean and professional look while maintaining good readability and accessibility across different devices and screen sizes.
+
 ## Images
 
+All images used in this application have been sourced from [Pinterest](https://ie.pinterest.com/) They have been selected to complement the overall design and aesthetic of the project, providing visual context and enhancing the user experience.
+
 ## Typography
+
+The application uses a combination of the following fonts to create a clean and modern look:
+
 
 ## Testing
 
