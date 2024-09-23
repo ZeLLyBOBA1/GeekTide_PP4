@@ -275,6 +275,8 @@ To develop this project, I utilized various resources, including:
 - [**CSS-Tricks:**](https://css-tricks.com/) For tips and tricks related to CSS and front-end design.
 - [**GitHub:**](https://github.com/) For exploring open-source projects and finding inspiration for my own code.
 
+[Go upwards ⇧](#content)
+
 ## Acknowledgments
 
 - I would like to thanks my facilitator Marko, for daily stand ups, and for helping me to resolve my code issues 
