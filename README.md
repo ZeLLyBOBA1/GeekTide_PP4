@@ -135,11 +135,17 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 [Go upwards ⇧](#content)
 
-<!-- ## Wireframes
+## Wireframes
+
+
 
 ## Features
 
-## Database Schema -->
+
+
+## Database Schema
+
+
 
 ## Colour Schema
 

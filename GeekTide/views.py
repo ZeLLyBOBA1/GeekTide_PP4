@@ -6,9 +6,10 @@ from django.core.paginator import Paginator
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
-from .forms import RegisterForm, ProfileForm
+from .forms import RegisterForm, ProfileForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+
 
 # Create your views here.
 def index(request):
@@ -21,12 +22,21 @@ def index(request):
 
     return render(request, 'index.html', {'posts': posts})
 
+
+
+
 def profile_view(request, display_name):
     profile = get_object_or_404(Profile, display_name=display_name)
     return render(request, 'profile.html', {'profile': profile})
 
+
+
+
 def login_view(request):
     return render(request, 'login.html')
+
+
+
 
 
 def login_view(request):
@@ -42,6 +52,9 @@ def login_view(request):
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
+
+
+
 
 
 def register_view(request):
@@ -65,6 +78,8 @@ def register_view(request):
     return render(request, 'register.html', {'form': form})
 
 
+
+
 @login_required
 def edit_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
@@ -77,6 +92,9 @@ def edit_profile(request):
         form = ProfileForm(instance=profile)
     
     return render(request, 'edit_profile.html', {'form': form})
+
+
+
 
 def load_posts(request):
     page = int(request.GET.get('page', 1))  
@@ -106,3 +124,21 @@ def load_posts(request):
         'posts': post_data,
         'has_next': posts.has_next() 
     })
+
+
+
+
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.owner = request.user 
+            post.save()
+            return redirect('index')  
+    else:
+        form = PostForm()
+
+    return render(request, 'create_post.html', {'form': form})

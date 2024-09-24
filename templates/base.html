@@ -21,9 +21,10 @@
     
     <aside id="sidebar" style="width: 60%;">
         {% if user.is_authenticated %}
-        <div class="navbar-button" id="create_button">
+        
+        <a href="{% url 'create_post' %}" class="navbar-button" id="create_button">
             <p id="create_p">Create Post</p>
-        </div>
+        </a>
 
         <span style="position: absolute; bottom: 5px;">GeekTide © 2024. All rights reserved.</span>
         {% else %}
