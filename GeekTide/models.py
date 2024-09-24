@@ -17,7 +17,7 @@ class Post(models.Model):
 
     def get_tags_list(self):
         """Разбиваем теги на список, разделяя их по запятой."""
-        return self.tags.split(",")
+        return self.tags.split(" ")
 
 
 class Profile(models.Model):

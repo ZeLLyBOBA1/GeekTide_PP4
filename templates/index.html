@@ -2,13 +2,12 @@
 {% load static %}
 {% block content %}
 
-<section id="index-container" style="overflow-y: auto; height: 100%;"> 
-    <div id="posts-container" style="width: 80%; height: 100%;">
-        
-    </div>
 
-    <div id="loader" style="display: none;">Loading Posts</div>
-</section>
+<div id="posts-container" style="width: 100%; height: 100%; overflow-y: auto;">
+        <!-- Здесь будут загружаться посты -->
+</div>
+<div id="loader" style="display: none;">Loading Posts...</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -45,28 +44,36 @@
                         page += 1;  
                         loading = false; 
                         $('#loader').hide();  
-
-                        if (!data.has_next) {
-                            $('#main-content').off('scroll');  
-                        }
+                    } else {
+                        $('#loader').hide(); // Скрыть лоадер, если больше нет постов
+                        $(window).off('scroll'); // Отключаем событие скролла
                     }
+
+                    // Если нет следующей страницы, убрать лоадер и прекратить загрузку
+                    if (!data.has_next) {
+                        $('#loader').hide();
+                        $('#posts-container').off('scroll');  // Отключаем скролл, если нет больше страниц
+                    }
+                },
+                error: function() {
+                    $('#loader').hide();
+                    loading = false; // Остановить загрузку в случае ошибки
                 }
             });
         }
     }
 
-    
     $(document).ready(function() {
-    loadMorePosts();  
+        loadMorePosts();  // Загружаем первую порцию постов
 
-    
-    $('#index-container').on('scroll', function() {
-        
-        if ($('#index-container').scrollTop() + $('#index-container').height() >= $('#posts-container').height()) {
-            loadMorePosts();  
-        }
+        // Слушаем событие прокрутки для контейнера #posts-container
+        $('#posts-container').on('scroll', function() {
+            // Проверка, достиг ли пользователь конца контейнера
+            if ($('#posts-container').scrollTop() + $('#posts-container').innerHeight() >= $('#posts-container')[0].scrollHeight) {
+                loadMorePosts();  // Загружаем посты при достижении конца контейнера
+            }
+        });
     });
-});
 </script>
 
 {% endblock content %}
