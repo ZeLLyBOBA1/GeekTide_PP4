@@ -48,6 +48,7 @@
                                     postHtml += '<div class="post-text-content-container">';
                                         postHtml += '<h2>' + post.title + '</h2>';
                                         postHtml += '<p>' + post.description + '</p>';
+                                        postHtml += '<a href="/posts/' + post.id + '" class="post-read-more-button">...</a>';
                                     postHtml += '</div>';
 
                                 postHtml += '</div>';
@@ -55,6 +56,8 @@
                             postHtml += '</div>';
 
                             $('#posts-container').append(postHtml);
+
+                            console.log(post.id);
                         });
 
                         page += 1;  

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Post, Profile
+from .models import Post, Profile, Comment
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 from django.contrib.auth import login, authenticate
@@ -114,6 +114,7 @@ def load_posts(request):
     
     for post in posts:
         post_data.append({
+            'id': post.id,
             'title': post.title,
             'description': post.description,
             'image_url': post.image.url if post.image else None,
@@ -160,3 +161,16 @@ def delete_user(request, pk):
     
     messages.error(request, "You do not have permission to delete this account.")
     return redirect('profile', pk=pk)
+
+
+
+def post_detail(request, id):
+    post = Post.objects.get(id=id)
+    comments = post.comments.all()  # Получаем все комментарии к посту
+    if request.method == "POST":
+        comment_text = request.POST.get('comment')
+        if request.user.is_authenticated and comment_text:
+            Comment.objects.create(post=post, user=request.user, text=comment_text)
+            return redirect('post_detail', id=id)  # Перенаправление на тот же пост
+
+    return render(request, 'post_detail.html', {'post': post, 'comments': comments})
