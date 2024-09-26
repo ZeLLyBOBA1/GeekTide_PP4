@@ -9,6 +9,8 @@ from django.contrib.auth.models import User
 from .forms import RegisterForm, ProfileForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -142,3 +144,19 @@ def create_post(request):
         form = PostForm()
 
     return render(request, 'create_post.html', {'form': form})
+
+
+
+
+@login_required
+def delete_user(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    
+    # Убедитесь, что пользователь удаляет свой собственный аккаунт
+    if request.user == user:
+        user.delete()
+        messages.success(request, "Your account has been successfully deleted.")
+        return redirect('index')  # Перенаправляем на главную страницу или другую страницу
+    
+    messages.error(request, "You do not have permission to delete this account.")
+    return redirect('profile', pk=pk)

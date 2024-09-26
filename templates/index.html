@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div id="posts-container" style="width: 100%; height: 100%; overflow-y: auto;">
+<div id="posts-container" style="width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;">
         <!-- Здесь будут загружаться посты -->
 </div>
 <div id="loader" style="display: none;">Loading Posts...</div>
@@ -27,15 +27,31 @@
                     if (data.posts.length > 0) {
                         data.posts.forEach(function(post) {
                             let postHtml = '<div class="post">';
-                            postHtml += '<div class="post-header">';
-                            postHtml += '<a class="avatar"><img src="' + (post.owner_avatar_url || '{% static "images/default-avatar.png" %}') + '" alt="' + post.owner_display_name + '" class="post-owner-avatar"></a>';
-                            postHtml += '<span class="post-owner-name"><a>' + post.owner_display_name + '</a></span>';
-                            postHtml += '</div>';
-                            postHtml += '<h2>' + post.title + '</h2>';
-                            if (post.image_url) {
-                                postHtml += '<img src="' + post.image_url + '" alt="' + post.title + '">';
-                            }
-                            postHtml += '<p>' + post.description + '</p>';
+                                postHtml += '<div class="post-header">';
+
+                                    postHtml += '<div class="post-user-info">';
+                                        postHtml += '<a class="avatar"><img src="' + (post.owner_avatar_url || '{% static "images/avatar-placeholder.jpg" %}') + '" alt="' + post.owner_display_name + '" class="post-owner-avatar"></a>';
+                                        postHtml += '<span class="post-owner-name"><a>' + post.owner_display_name + '</a></span>';
+                                    postHtml += '</div>';
+
+                                    if (post.image_url) {
+                                    postHtml += '<div class="post-image" style="background-image: url(' + post.image_url + ');"></div>';
+                                    }
+                                    else{
+                                    postHtml += '<div class="post-image" style="background-image: url(' + '{% static "images/placeholder.jpg" %}' + ');"></div>';
+                                    }
+
+                                postHtml += '</div>';
+
+                                postHtml += '<div class="post-text-content">';
+                                
+                                    postHtml += '<div class="post-text-content-container">';
+                                        postHtml += '<h2>' + post.title + '</h2>';
+                                        postHtml += '<p>' + post.description + '</p>';
+                                    postHtml += '</div>';
+
+                                postHtml += '</div>';
+
                             postHtml += '</div>';
 
                             $('#posts-container').append(postHtml);

@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-button{
+    cursor: pointer;
+    background-color: #000000;
+    transition: 0.2s ease-in-out;
+    color: #f0f8ff;
+    font-family: monospace;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+    text-decoration: none;
+    border-style: solid;
+}
+
+.login-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+.navbar-button{
+    cursor: pointer;
+    background-color: #000000;
+    transition: 0.2s ease-in-out;
+    color: #f0f8ff;
+    font-family: monospace;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+    text-decoration: none;
+    border-style: solid;
+}
+
+.navbar-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+aside{
+    position: sticky;
+    top: 0;
+    display: block;
+    width: 20%;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: rgb(200, 200, 200);
+}
+
+#main-section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgb(200, 200, 200);
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+       
+#logo-pic{
+    background-color: rgb(0, 0, 0);
+    height: 32px;
+    width: 32px;
+    display: none;
+    border-radius: 10px 10px 0px 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#logo-name{
+    color: rgb(0, 0, 0);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    
+}
+
+#header-right-side{
+    position: static;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#header-left-side{
+    position: static;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#create-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#create-p{
+    font-family: monospace;
+    font-size: 16px
+}
+
+#profile-icon{
+    display: flex;
+    align-items: center;
+}
+
+#posts-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.post{
+    width: 90%;
+    max-width: 500px;
+    height: 300px;
+    
+    border-radius: 5px;
+    background-color: rgb(60, 60, 60, 0.01);
+    display: flex;
+}
+
+.post-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.post-owner-name{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.post-user-info{
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.post-image {
+    width: 100%; /* Ширина контейнера для изображения */
+    height: 260px; /* Фиксированная высота для поста с изображением */
+    background-size: contain; /* Масштабируем изображение внутри контейнера */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-color: #000000; /* Черный цвет для заполнения пустых мест */
+    border-radius: 0 0 5px 5px; /* Закругленные углы для контейнера изображения */
+}
+
+.post-text-content{
+    width: 60%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 4px 0 4px;
+    gap: 4px;
+}
+
+.post-text-content-container{
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+}
+
+.post-title{
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.post-description{
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#main-content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#posts-container-div{
+    width: 30%;
+    margin-right: 10%;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+
+.avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    object-fit: cover;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #595151;
+}
+
+.bio {
+    margin-left: 20px;
+}
+
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+textarea {
+    resize: vertical; 
+}
+
+
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+
+.button-edit-profile {
+    background: #000; 
+    color: #fff; 
+    border: 2px solid #fff; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+.button-edit-profile:hover {
+    background: #333; 
+    border-color: #ccc; 
+}
+
+.button-edit-profile:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); 
+}
+
+
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-header img.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    margin-right: 20px;
+}
+
+.profile-header .profile-info {
+    flex: 1;
+}
+
+.profile-header .profile-info h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.profile-header .profile-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+
+.button-edit-profile {
+    background: #000; 
+    color: #fff; 
+    border: 2px solid #fff; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+.button-edit-profile:hover {
+    background: #333; 
+    border-color: #ccc; 
+}
+
+.button-edit-profile:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); 
+}
+
+
+.profile-details {
+    margin-bottom: 20px;
+}
+
+.profile-details h2 {
+    font-size: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    color: #666;
+}
+
+
+.profile-bio {
+    margin-top: 20px;
+}
+
+.profile-bio p {
+    font-style: italic;
+    color: #555;
+}
+
+
+.profile-links a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.profile-links a:hover {
+    text-decoration: underline; 
+}
+
+
+.button-logout {
+    background: #d9534f; 
+    color: #fff; 
+    border: 2px solid #d9534f; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: all 0.3s ease; 
+}
+
+.button-logout:hover {
+    background: #c9302c; 
+    border-color: #c9302c; 
+}
+
+.button-logout:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); 
+}
+
+#index-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    position: fixed; 
+    transform: translateX(-100%); 
+    z-index: 100; 
+    background-color: #ffffff;
+    transition: transform 1s;
+}
+
+#sidebar-checkbox:checked ~ #sidebar{
+    transform: translateX(0%);
+}
+
+#sidebar-checkbox:checked ~ label .overlay{
+background-color: rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(5px);
+display: inline;
+z-index: 1;
+}
+
+label .overlay{
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 200%; 
+    height: 200%; 
+    position: fixed; 
+    backdrop-filter: blur(0px);
+}

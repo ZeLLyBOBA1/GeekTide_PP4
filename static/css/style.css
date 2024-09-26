@@ -136,19 +136,81 @@ header{
 
 .post{
     width: 90%;
-    border: 1px solid #ddd;
+    max-width: 500px;
+    height: 300px;
+    
     border-radius: 5px;
+    background-color: rgb(60, 60, 60, 0.01);
+    display: flex;
 }
 
 .post-header{
     display: flex;
-    justify-content: start;
-    align-items: start;
-    gap: 5px;
-    border-style: dashed;
-    padding: 0 0 10px 10px;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
 }
+
+.post-owner-name{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.post-user-info{
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.post-image {
+    width: 100%; /* Ширина контейнера для изображения */
+    height: 260px; /* Фиксированная высота для поста с изображением */
+    background-size: contain; /* Масштабируем изображение внутри контейнера */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Изображение не повторяется */
+    background-color: #000000; /* Черный цвет для заполнения пустых мест */
+    border-radius: 0 0 5px 5px; /* Закругленные углы для контейнера изображения */
+}
+
+.post-text-content{
+    width: 60%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 4px 0 4px;
+    gap: 4px;
+}
+
+.post-text-content-container{
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    word-break: break-word; /* Перенос длинных слов */
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+/* .post-title{
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.post-description{
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+} */
+
 
 #main-content{
     width: 100%;
@@ -161,10 +223,6 @@ header{
 #posts-container-div{
     width: 30%;
     margin-right: 10%;
-}
-
-.post{
-    gap: 100px;
 }
 
 .profile-container {
@@ -181,8 +239,11 @@ header{
 .avatar img {
     width: 32px;
     height: 32px;
-    border-radius: 20px;
+    border-radius: 5px;
     object-fit: cover;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #595151;
 }
 
 .bio {
@@ -361,9 +422,9 @@ button:hover {
 
 
 .button-logout {
-    background: #d9534f; 
+    background: #000; 
     color: #fff; 
-    border: 2px solid #d9534f; 
+    border: 2px solid #000; 
     padding: 10px 20px; 
     font-size: 14px; 
     cursor: pointer; 
@@ -375,8 +436,8 @@ button:hover {
 }
 
 .button-logout:hover {
-    background: #c9302c; 
-    border-color: #c9302c; 
+    background: #333; 
+    border-color: #ccc; 
 }
 
 .button-logout:focus {
@@ -419,4 +480,18 @@ label .overlay{
     height: 200%; 
     position: fixed; 
     backdrop-filter: blur(0px);
+}
+
+.button-delete-profile {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* Красный цвет для удаления */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-delete-profile:hover {
+    background-color: #ff1a1a; /* Ещё ярче при наведении */
 }

@@ -4,13 +4,24 @@
 
 <div class="profile-container"></div>
     <div class="profile-header">
+        {% if user.profile.avatar %}
         <img src="{{ user.profile.avatar.url }}" class="avatar">
+        {% else %}
+        <img src="{% static 'images/avatar-placeholder.jpg' %}" class="avatar">
+        {% endif %}
         <div class="profile-info">
             <h1>{{ user.profile.display_name }}</h1>
             <p>{{ user.profile.first_name }} {{ user.profile.last_name }}</p>
             <p>Email: {{ user.email }}</p>
             <p><a href="{% url 'edit_profile' %}" class="button-edit-profile">Edit Profile</a></p>
             <p><a href="{% url 'logout' %}" class="button-logout">Log Out</a></p>
+            <p><a href="#" onclick="if(confirm('Are you sure you want to delete your account? This action cannot be undone.')) { document.getElementById('delete-user-form').submit(); }" class="button-delete-profile">Delete Account</a></p>
+
+            <!-- Форма для удаления пользователя -->
+            <form id="delete-user-form" method="POST" action="{% url 'delete_user' user.pk %}" style="display: none;">
+                {% csrf_token %}
+            </form>
+
         </div>
     </div>
 
