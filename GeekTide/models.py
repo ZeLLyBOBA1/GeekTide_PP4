@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 class Post(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE) 
     title = models.CharField(max_length=200)  
-    description = models.TextField()  
+    description = models.TextField()    
     image = CloudinaryField('image', blank=True, null=True)  
     tags = models.CharField(max_length=200, help_text="Введите теги через запятую")  
     created_at = models.DateTimeField(auto_now_add=True)  

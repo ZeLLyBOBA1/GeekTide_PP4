@@ -19,13 +19,9 @@ DevTide is an innovative web platform designed to be your comprehensive hub for 
   - [User Stories](#user-stories)
 
 - ### Design & Features
-  <!-- - [Wireframes](#wireframes)
+  - [Wireframes](#wireframes)
   - [Features](#features)
-    - [](#)
-    - [](#)
-    - [](#)
-    - [](#)
-  - [Database Schema](#database-schema) -->
+  - [Database Schema](#database-schema)
   - [Colour Schema](#colour-schema)
   - [Images](#images)
   - [Typography](#typography)
@@ -94,7 +90,7 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 ![screenshot](documentation/readme/github_projects.png)
 
-<summary>GitHub Projects Image</summary>
+**<summary>GitHub Projects Image</summary>**
 
 </details>
 
@@ -137,15 +133,198 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 ## Wireframes
 
+The wireframes for this project were created to provide a clear visual representation of the website’s layout and structure before the development phase began. Each wireframe focuses on the user interface (UI) and shows how the content and interactive elements are organized across different pages.
 
+
+<details>
+
+**<summary>Wireframe for small devices</summary>**
+
+![screenshot](documentation/readme/wireframe-small.png)
+
+</details>
+
+<details>
+
+**<summary>Wireframe for bigger devices</summary>**
+
+![screenshot](documentation/readme/wireframe-big.png)
+
+</details>
+
+[Go upwards ⇧](#content)
 
 ## Features
 
+This project includes several features to make it easy and fun for users to interact with content. Here are the main features:
 
+<details>
+
+**<summary>Logo</summary>**
+
+![screenshot](documentation/readme/features-logo.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile Icon</summary>**
+
+![screenshot](documentation/readme/features-profile-icon.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile Avatar</summary>**
+
+![screenshot](documentation/readme/features-profile-avatar.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile</summary>**
+
+![screenshot](documentation/readme/features-profile.png)
+
+</details>
+
+
+<details>
+
+**<summary>Edit Profile Button</summary>**
+
+![screenshot](documentation/readme/features-edit-profile-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Log Out Button</summary>**
+
+![screenshot](documentation/readme/features-log-out-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Delete Account Button</summary>**
+
+![screenshot](documentation/readme/features-delete-account-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Sidebar | not loged in</summary>**
+
+![screenshot](documentation/readme/features-sidebar-not-loged-in.png)
+
+</details>
+
+
+<details>
+
+**<summary>Edit Profile Form</summary>**
+
+![screenshot](documentation/readme/features-edit-profile-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Log In Form</summary>**
+
+![screenshot](documentation/readme/features-log-in-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Registration Form</summary>**
+
+![screenshot](documentation/readme/features-registration-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile Icon</summary>**
+
+![screenshot](documentation/readme/features-profile-icon.png)
+
+</details>
+
+
+<details>
+
+**<summary>Create Post Button</summary>**
+
+![screenshot](documentation/readme/features-create-post-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Create Post Form</summary>**
+
+![screenshot](documentation/readme/features-create-post-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Post</summary>**
+
+![screenshot](documentation/readme/features-post.png)
+
+</details>
+
+
+<details>
+
+**<summary>Post Details Page</summary>**
+
+![screenshot](documentation/readme/features-post-details-page.png)
+
+</details>
+
+
+<details>
+
+**<summary>Comment</summary>**
+
+![screenshot](documentation/readme/features-comment.png)
+
+</details>
+
+[Go upwards ⇧](#content)
 
 ## Database Schema
 
+The database schema for this project is designed to efficiently store and manage the data related to posts, users, and interactions on the platform. The schema follows a relational database model
 
+<details>
+
+**<summary>Database Schema</summary>**
+
+![screenshot](documentation/readme/database-schema.png)
+
+</details>
+
+[Go upwards ⇧](#content)
 
 ## Colour Schema
 
