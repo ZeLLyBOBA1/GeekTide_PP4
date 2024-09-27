@@ -2,9 +2,9 @@
 
 ## Introduction
 
-![screenshot](static/test_image.jpg)
+![screenshot](documentation/readme/am-i-responsive.png)
 
-### [GeekTide Live]()
+### [GeekTide Live](https://geektide-0cf26c16beb0.herokuapp.com/)
 
 ## About us
 
