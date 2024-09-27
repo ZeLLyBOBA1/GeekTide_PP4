@@ -131,13 +131,16 @@ header{
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .post{
     width: 90%;
     max-width: 500px;
-    height: 300px;
+    min-height: 300px;
     
     border-radius: 5px;
     background-color: rgb(60, 60, 60, 0.01);
@@ -168,13 +171,13 @@ header{
 }
 
 .post-image {
-    width: 100%; /* Ширина контейнера для изображения */
-    height: 260px; /* Фиксированная высота для поста с изображением */
-    background-size: contain; /* Масштабируем изображение внутри контейнера */
-    background-position: center; /* Центрирование изображения */
-    background-repeat: no-repeat; /* Изображение не повторяется */
-    background-color: #000000; /* Черный цвет для заполнения пустых мест */
-    border-radius: 0 0 5px 5px; /* Закругленные углы для контейнера изображения */
+    width: 100%; 
+    height: 260px; 
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: #000000; 
+    border-radius: 0 0 5px 5px;
 }
 
 .post-text-content{
@@ -192,7 +195,7 @@ header{
     background-color: #f0f0f0;
     width: 100%;
     height: 100%;
-    word-break: break-word; /* Перенос длинных слов */
+    word-break: break-word; 
     overflow: hidden;
     border-radius: 5px;
     padding-bottom: 50px;
@@ -213,22 +216,6 @@ header{
     width: 100%;
     cursor: pointer;
 }
-
-/* .post-title{
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    width: 100%;
-    overflow: hidden;
-}
-
-.post-description{
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-} */
-
 
 #main-content{
     width: 100%;
@@ -293,7 +280,7 @@ textarea {
 }
 
 
-button {
+#comment-button {
     background-color: #000;
     color: #fff;
     border: none;
@@ -349,6 +336,7 @@ button:hover {
     border-radius: 50%;
     object-fit: cover; 
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 .profile-header .profile-info {
@@ -460,6 +448,7 @@ button:hover {
 }
 
 #sidebar{
+    width: 40%;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -493,7 +482,7 @@ label .overlay{
 .button-delete-profile {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff4d4d; /* Красный цвет для удаления */
+    background-color: #ff4d4d; 
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -501,7 +490,7 @@ label .overlay{
 }
 
 .button-delete-profile:hover {
-    background-color: #ff1a1a; /* Ещё ярче при наведении */
+    background-color: #ff1a1a; 
 }
 
 #comments-section{
@@ -515,6 +504,24 @@ label .overlay{
     background-color: #f0f0f0;
     border-radius: 5px;
     padding: 5px;
+    word-break: break-word;
+    max-width: 500px;
+}
+
+.comment p{
+    background-color: #d8d8d8;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#post-detail{
+    width: 100%;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .post-detail-info{
@@ -539,12 +546,165 @@ label .overlay{
 }
 
 .post-detail-form textarea:focus{
-    border: none; /* Убираем границу при фокусе */
-    outline: none; /* Убираем стандартную рамку фокуса */
-    box-shadow: none; /* Убираем тень, если она есть */
+    border: none; 
+    outline: none; 
+    box-shadow: none; 
 }
 
 .post-detail-comments{
     width: 100%;
     margin-top: 10px;
+}
+
+.post-detail-text{
+    padding: 10px;
+}
+
+#create-button{
+    margin-top: 10px;
+}
+
+
+.container {
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    overflow-y: auto; 
+}
+
+
+h1 {
+    text-align: center; 
+    font-size: 28px; 
+    margin-bottom: 20px; 
+    color: #333; 
+    font-family: 'Arial', sans-serif;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+form input[type="text"],
+form input[type="file"],
+form textarea,
+form select {
+    width: 100%; 
+    padding: 12px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    color: #333; 
+    background-color: #fff; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+
+form input[type="text"]:focus,
+form textarea:focus,
+form select:focus {
+    border-color: #3498db; 
+    outline: none; 
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5); 
+}
+
+
+form button[type="submit"] {
+    padding: 12px 20px; 
+    background-color: #3498db; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+
+form button[type="submit"]:hover {
+    background-color: #2980b9; 
+}
+
+
+form .errorlist {
+    color: #e74c3c; 
+    font-size: 14px; 
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-container {
+    max-width: 400px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.registration-container {
+    max-width: 450px; 
+    margin: 0 auto; 
+    padding: 25px; 
+    background-color: #f9f9f9; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.edit-profile-container {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 30px; 
+    background-color: #f4f4f4; 
+    border-radius: 12px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+
+@media (min-width: 1200px){
+    #sidebar{
+        transform: translateX(0);
+        position: sticky;
+        width: 15%;
+        transition: none;
+    }
+    body{
+        display: flex;
+    }
+  
+    .post{
+        max-width: 500px;
+        max-height: 1000px;
+        width: 85%;
+        margin-right: 15%;
+    }
+
+    #header-right-side{
+        width: 15%;
+    }
+
+    #post-detail{
+        padding-right: 15%;
+    }
+
+    #menu-icon{
+        display: none;
+    }
+
+    .overlay{
+        display: none;
+    }
 }

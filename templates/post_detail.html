@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-<section id="post-detail" style="width: 100%; padding: 20px; overflow-x: hidden; overflow-y: auto; display: flex; flex-direction: column; align-items: center;">
+<section id="post-detail">
 
     <div class="post-detail-container">
         <div class="post-detail-info">
-            
-            <h1 class="post-title">{{ post.title }}</h1>
-            <p class="post-description">{{ post.description }}</p>
-
+            <div class="post-detail-text">
+                <h1 class="post-title">{{ post.title }}</h1>
+                <p class="post-description">{{ post.description }}</p>
+            </div>
             {% if post.image %}
                 <div class="post-image" style="background-image: url('{{ post.image.url }}');">
-                    <!-- You can add other elements here if needed -->
+                    
                 </div>
             {% else %}
-                
+
             {% endif %}
             
         </div>
@@ -26,7 +26,7 @@
                 <form class="post-detail-form" method="POST">
                     {% csrf_token %}
                     <textarea name="comment" placeholder="Leave a comment..." required></textarea>
-                    <button type="submit">Submit</button>
+                    <button id="comment-button" type="submit">Submit</button>
                 </form>
             </div>
             {% else %}

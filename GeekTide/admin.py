@@ -2,12 +2,12 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Profile, Comment
 
-# Inline для комментариев
+
 class CommentInline(admin.TabularInline):
     model = Comment
-    extra = 1  # Количество пустых форм для добавления комментариев
-    fields = ('user', 'text', 'created_at')  # Поля, которые хотите отображать в админке
-    readonly_fields = ('created_at',)  # Поля, которые нельзя редактировать
+    extra = 1  
+    fields = ('user', 'text', 'created_at')  
+    readonly_fields = ('created_at',)  
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -16,7 +16,7 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('created_at', 'owner')  
     summernote_fields = ('description',)  
 
-    # Добавляем Inline к модели Post
+    
     inlines = [CommentInline]
 
 
@@ -29,6 +29,6 @@ class ProfileAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('user', 'post', 'created_at')  # Поля, которые хотите видеть в админке
-    search_fields = ('user__username', 'post__title')  # Поиск по имени пользователя и заголовку поста
-    list_filter = ('post',)  # Фильтрация по посту
+    list_display = ('user', 'post', 'created_at')  
+    search_fields = ('user__username', 'post__title')  
+    list_filter = ('post',)

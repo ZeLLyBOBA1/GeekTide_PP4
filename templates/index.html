@@ -3,8 +3,8 @@
 {% block content %}
 
 
-<div id="posts-container" style="width: 100%; height: 100%; overflow-y: auto; overflow-x: hidden;">
-        <!-- Здесь будут загружаться посты -->
+<div id="posts-container">
+        
 </div>
 <div id="loader" style="display: none;">Loading Posts...</div>
 
@@ -64,32 +64,32 @@
                         loading = false; 
                         $('#loader').hide();  
                     } else {
-                        $('#loader').hide(); // Скрыть лоадер, если больше нет постов
-                        $(window).off('scroll'); // Отключаем событие скролла
+                        $('#loader').hide(); 
+                        $(window).off('scroll'); 
                     }
 
-                    // Если нет следующей страницы, убрать лоадер и прекратить загрузку
+                    
                     if (!data.has_next) {
                         $('#loader').hide();
-                        $('#posts-container').off('scroll');  // Отключаем скролл, если нет больше страниц
+                        $('#posts-container').off('scroll');  
                     }
                 },
                 error: function() {
                     $('#loader').hide();
-                    loading = false; // Остановить загрузку в случае ошибки
+                    loading = false; 
                 }
             });
         }
     }
 
     $(document).ready(function() {
-        loadMorePosts();  // Загружаем первую порцию постов
+        loadMorePosts();  
 
-        // Слушаем событие прокрутки для контейнера #posts-container
+        
         $('#posts-container').on('scroll', function() {
-            // Проверка, достиг ли пользователь конца контейнера
+            
             if ($('#posts-container').scrollTop() + $('#posts-container').innerHeight() >= $('#posts-container')[0].scrollHeight) {
-                loadMorePosts();  // Загружаем посты при достижении конца контейнера
+                loadMorePosts();  
             }
         });
     });

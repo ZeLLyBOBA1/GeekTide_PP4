@@ -153,11 +153,11 @@ def create_post(request):
 def delete_user(request, pk):
     user = get_object_or_404(User, pk=pk)
     
-    # Убедитесь, что пользователь удаляет свой собственный аккаунт
+    
     if request.user == user:
         user.delete()
         messages.success(request, "Your account has been successfully deleted.")
-        return redirect('index')  # Перенаправляем на главную страницу или другую страницу
+        return redirect('index')  
     
     messages.error(request, "You do not have permission to delete this account.")
     return redirect('profile', pk=pk)
@@ -166,11 +166,11 @@ def delete_user(request, pk):
 
 def post_detail(request, id):
     post = Post.objects.get(id=id)
-    comments = post.comments.all()  # Получаем все комментарии к посту
+    comments = post.comments.all()  
     if request.method == "POST":
         comment_text = request.POST.get('comment')
         if request.user.is_authenticated and comment_text:
             Comment.objects.create(post=post, user=request.user, text=comment_text)
-            return redirect('post_detail', id=id)  # Перенаправление на тот же пост
+            return redirect('post_detail', id=id)  
 
     return render(request, 'post_detail.html', {'post': post, 'comments': comments})
