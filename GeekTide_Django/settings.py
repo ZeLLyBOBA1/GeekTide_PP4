@@ -32,6 +32,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
                 "8000-zellyboba1-geektidepp4-dqoogb1665d.ws.codeinstitute-ide.net",
                 "geektide-0cf26c16beb0.herokuapp.com",
+                "amiresponsive.co.uk"
                 ]
 
 
